@@ -167,7 +167,39 @@ namespace Capa_Negocio.Repositorio
 
         }
 
+        //This method here retreive all Employees from the database
+        //This will be chaged later
+        internal DataTable SeleccionarEmpleado()
+        {
 
+            DataSet dataset = new DataSet();
+            DataTable datatable = new DataTable();
+            SqlConnection coneccion = new SqlConnection(CConexion.Conectar());
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand("SIUD_Empleado", coneccion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Control", "S");
+                //cmd.Parameters.AddWithValue("@Emp_ID", EmpID);
+
+                SqlDataAdapter SqlDa = new SqlDataAdapter(cmd);
+                SqlDa.Fill(dataset);
+                datatable = dataset.Tables[0];
+
+            }
+            catch (Exception error)
+            {
+                error.Message.ToString();
+            }
+            finally
+            {
+                coneccion.Close();
+            }
+
+            return datatable;
+
+        }
 
 
 

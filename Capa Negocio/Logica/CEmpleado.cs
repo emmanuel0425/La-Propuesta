@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,14 @@ namespace Capa_Negocio.Logica
             CRegistro objRegistro = new CRegistro();
             objRegistro.Registro(empleado, ref ResultadoOK, ref MensajeError);
             return Empleado_ID; 
+
+        }
+
+
+        public DataTable Buscar()
+        {
+            CBusqueda objBusqueda = new CBusqueda();
+            return objBusqueda.SeleccionarEmpleado(EmpID);
 
         }
     }

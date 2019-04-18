@@ -22,6 +22,7 @@ namespace Capa_Presentacion
         //SqlCommandBuilder SqlCb;
         //DataTable dt;
         //SqlConnection con;
+        CEmpleado objEmpleado = new CEmpleado();
 
 
         public Registro_Empleados()
@@ -69,7 +70,7 @@ namespace Capa_Presentacion
 
         public void Registrar()
         {
-            CEmpleado objEmpleado = new CEmpleado();
+          
 
             string MensajeError = "";
             bool ResultadoOK = true;
@@ -129,6 +130,8 @@ namespace Capa_Presentacion
 
         private void BtnBuscarEmpleados_Click(object sender, EventArgs e)
         {
+
+            DGVEmpleado.DataSource = objEmpleado.Buscar();
             //using (SqlConnection con = new SqlConnection(CConexion.Conectar()))
             //    con.Open();
             //SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Empleado", con);
@@ -143,31 +146,31 @@ namespace Capa_Presentacion
             //SqlDa.Fill(dt);
             //DGVEmpleado.DataSource = dt;
 
-        //    Cursor.Current = Cursors.WaitCursor;
+            //    Cursor.Current = Cursors.WaitCursor;
 
-        //    try
-        //    {
-        //        empleadoBindingSource.EndEdit();
-        //        empleadoTableAdapter.Update(this.proyecto_FinalDataSet.Empleado);
-        //        MessageBox.Show("El empleado ha sido agregado exitosamente.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    try
+            //    {
+            //        empleadoBindingSource.EndEdit();
+            //        empleadoTableAdapter.Update(this.proyecto_FinalDataSet.Empleado);
+            //        MessageBox.Show("El empleado ha sido agregado exitosamente.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
 
-        //    Cursor.Current = Cursors.Default;
-        //}
+            //    Cursor.Current = Cursors.Default;
+            //}
 
-        //private void DGVEmpleado_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyCode == Keys.Delete)
-        //    {
-        //        if (MessageBox.Show("Realmente desea eliminar este registro?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-        //            empleadoBindingSource.RemoveCurrent();
-        //    }
-                
+            //private void DGVEmpleado_KeyDown(object sender, KeyEventArgs e)
+            //{
+            //    if (e.KeyCode == Keys.Delete)
+            //    {
+            //        if (MessageBox.Show("Realmente desea eliminar este registro?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //            empleadoBindingSource.RemoveCurrent();
+            //    }
+
         }
     }
 }
