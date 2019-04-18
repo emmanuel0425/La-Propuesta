@@ -44,7 +44,7 @@ namespace Capa_Datos
                 cmd.Parameters.AddWithValue("@EstadoC_ID", objEmpleado.EstadoC_ID);
                 cmd.Parameters.AddWithValue("@Emp_Direccion", objEmpleado.Direccion);
                 cmd.Parameters.AddWithValue("@Emp_Activo", objEmpleado.Activo);
-                cmd.Parameters.AddWithValue("@Provincia'ID", objEmpleado.Provincia_ID);
+                cmd.Parameters.AddWithValue("@ProvinciaID", objEmpleado.Provincia_ID);
                 cmd.Parameters.AddWithValue("@Cargo_ID", objEmpleado.Cargo_ID);
                 SqlDataAdapter SqlDa = new SqlDataAdapter(cmd);
                 SqlDa.Fill(dataset);
