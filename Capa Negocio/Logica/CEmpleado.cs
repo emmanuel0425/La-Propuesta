@@ -22,7 +22,7 @@ namespace Capa_Negocio.Logica
         public DateTime FechaNac { get; set; }
         public int EstadoC_ID { get; set; }
         public string Direccion { get; set; }
-        public string Provincia { get; set; }
+        public int Provincia_ID { get; set; }
         public int Municipio_ID { get; set; }
         public bool Activo { get; set; }
         public int Cargo_ID { get; set; }

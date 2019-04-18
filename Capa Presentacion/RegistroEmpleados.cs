@@ -127,10 +127,6 @@ namespace Capa_Presentacion
             Registrar();
         }
 
-        
-
-        
-
         private void BtnBuscarEmpleados_Click(object sender, EventArgs e)
         {
             //using (SqlConnection con = new SqlConnection(CConexion.Conectar()))
